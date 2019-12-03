@@ -1,2 +1,5 @@
 # monero_extra_entropy
-How to add some entropy for generating a new wallet.
+
+You can use a pair of hexadecimal dice to create a new monero wallet with real random numbers.
+
+
