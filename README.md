@@ -29,7 +29,7 @@ For one dice you need to roll double the amount - 64 times.
 
 Make sure you buy two different colored dice or mark one dice with a dot. Always write down the number on the marked dice first. Your brain could be biased and always write down the smaller number first. We want to avoid such behavior.
 
-## Create entropy
+## Create some entropy
 
 The sequence after `echo` is where you write down the result of your dice. In this example i have rolled the dice 40 times to be on the safe side.
 
