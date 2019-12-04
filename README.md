@@ -2,7 +2,7 @@
 ## Intro
 Computers are pretty bad at creating random numbers. These can be easily predicted. For this reason we need some outside event to create an entropy pool that can be used to create real random numbers.
 
-We use a pair of hexadecimal dice to make sure the data for our entropy pool is created from real random output. A good random number is important when creating a new monero wallet. We dont want anyone to predict the mnemonic seed from our private key.
+We use a pair of hexadecimal dice to make sure the data for our entropy pool is created from real random output. A good random number is important when creating a new monero wallet. We do *not* want anyone to predict the mnemonic seed from our private key.
 
 ![alt text](https://github.com/nonie-sys/monero_extra_entropy/blob/master/hexdice.jpg "Hexadecimal dice")
 
@@ -39,3 +39,13 @@ echo 50F38D07032E63933A5317D8FE3E0B4ED92560ABE310CC98BCFA54F3B196B2CC3FA219A494C
 ```
 xxd writes your hex sequence to a file. Try to avoid writing the file on a hard drive. `/dev/shm` is shared memory that can be used for this purpose. `export HISTFILE=/dev/null` makes sure that linux wont write the following command in the *.bash_history*.
 
+## Create new wallet
+
+At last we can create a new wallet.
+
+```bash
+./monero-wallet-cli --generate-new-wallet mywallet --extra-entropy /dev/shm/entropy
+```
+Protect your wallet with a phassphrase.
+
+`--generate-new-wallet` creates a mnemonic seed of 25 words. Please write down those 25 words on a piece of paper and keep it safe. With the mnemonic seed you can restore your wallet if it gets lost.
