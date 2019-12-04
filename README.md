@@ -28,3 +28,14 @@ To create 256 bits of data (entropy) we need to roll the two dice at *least* 32 
 For one dice you need to roll double the amount - 64 times.
 
 Make sure you buy two different colored dice or mark one dice with a dot. Always write down the number on the marked dice first. Your brain could be biased and always write down the smaller number first. We want to avoid such behavior.
+
+## Create entropy
+
+The sequence after `echo` is where you write down the result of your dice. In this example i have rolled the dice 40 times to be on the safe side.
+
+```bash
+export HISTFILE=/dev/null
+echo 50F38D07032E63933A5317D8FE3E0B4ED92560ABE310CC98BCFA54F3B196B2CC3FA219A494C49A7C | xxd -r -p > /dev/shm/entropy
+```
+xxd writes your hex sequence to a file. Try to avoid writing the file on a hard drive. `/dev/shm` is shared memory that can be used for this purpose. `export HISTFILE=/dev/null` makes sure that linux wont write the following command in the *.bash_history*.
+
