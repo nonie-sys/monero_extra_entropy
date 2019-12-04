@@ -46,6 +46,6 @@ At last we can create a new wallet.
 ```bash
 ./monero-wallet-cli --generate-new-wallet mywallet --extra-entropy /dev/shm/entropy
 ```
-Protect your wallet with a phassphrase.
+Protect your wallet with a passphrase.
 
 `--generate-new-wallet` creates a mnemonic seed of 25 words. Please write down those 25 words on a piece of paper and keep it safe. With the mnemonic seed you can restore your wallet if it gets lost.
